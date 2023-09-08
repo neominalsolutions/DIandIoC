@@ -12,6 +12,5 @@ namespace DIandIoC
     void Connect(string ConnectionString);
     int Execute(string sqlCommand);
 
-    void Delete();
   }
 }

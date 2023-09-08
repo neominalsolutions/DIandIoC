@@ -15,7 +15,7 @@ namespace DIandIoC
 
     public int Execute(string sqlCommand)
     {
-      Console.WriteLine("MySql Command çalıştırıldı");
+      Console.WriteLine($"{sqlCommand}");
       return 1;
     }
   }

@@ -21,14 +21,5 @@ namespace DIandIoC
       return 1;
     }
 
-    public void Delete()
-    {
-      Console.WriteLine("Delete işlemi");
-    }
-
-    public void Test()
-    {
-      throw new NotImplementedException();
-    }
   }
 }
