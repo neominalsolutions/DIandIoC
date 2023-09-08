@@ -10,14 +10,14 @@ var serviceProvider = new ServiceCollection()
             .AddTransient<IDataStore, PostgresDataStore>() // register
             .BuildServiceProvider();
 
+var dataStore = serviceProvider.GetRequiredService<IDataStore>();
 
-
+// method DI 
 var repo3 = new CustomerRepository();
-repo3.Update(new Customer { Id = 1, Name = "Can" }, serviceProvider.GetRequiredService<IDataStore>());
+repo3.Update(new Customer { Id = 1, Name = "Can" }, dataStore);
 
-serviceProvider.GetRequiredService<IDataStore>();
 
-var repo4 = new UserRepository(serviceProvider.GetRequiredService<IDataStore>());
+var repo4 = new UserRepository(dataStore);
 repo4.Add(new User { Name = "Can" });
 repo4.Delete();
 
